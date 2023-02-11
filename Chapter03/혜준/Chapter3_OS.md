@@ -65,5 +65,6 @@
 ## 3.1.2. 컴퓨터의 요소
 - CPU, DMA 컨트롤러, 메모리, 타이머, 디바이스 컨트롤러 등으로 이루어져 있다.
 ![image](https://user-images.githubusercontent.com/70474860/218253991-2b4b8765-2eeb-43a2-84a9-6e66fe611f52.png)
-### CPU
-
+### CPU(Central Processing Unit)
+- 산술논리연산장치, 제어장치, 레지스터로 구성되어 있는 컴퓨터 장치
+- 인터럽트에 의해 단순히 메모리에 존재하는 명령어를 해석해서 실행
