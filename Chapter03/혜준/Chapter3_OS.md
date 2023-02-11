@@ -27,7 +27,7 @@
 ### 운영체제의 구조
 |유저 프로그램|
 |---|
-|<span style="color:red">GUI</span>|
+| <span style="color:red">GUI</span> |
 |<span style="color:red">시스템콜</span>|
 |<span style="color:red">커널</span>|
 |<span style="color:red">드라이버</span>|
