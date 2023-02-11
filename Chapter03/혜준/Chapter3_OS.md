@@ -165,3 +165,4 @@
 
         ❓ 레디스(redis)란?
         key와 value를 가진 NoSQL 데이터베이스
+
