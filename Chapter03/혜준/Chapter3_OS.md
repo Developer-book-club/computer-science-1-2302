@@ -64,6 +64,6 @@
 
 ## 3.1.2. 컴퓨터의 요소
 - CPU, DMA 컨트롤러, 메모리, 타이머, 디바이스 컨트롤러 등으로 이루어져 있다.
-
+![image](https://user-images.githubusercontent.com/70474860/218253991-2b4b8765-2eeb-43a2-84a9-6e66fe611f52.png)
 ### CPU
 
