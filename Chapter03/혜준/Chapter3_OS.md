@@ -278,7 +278,7 @@
 ## 3.3.2. 프로세스의 상태
 >프로세스의 상태는 생성, 대기, 대기 중단, 실행, 중단, 일시 중단, 종료 등의 상태 값을 가진다.
 
-![image](https://user-images.githubusercontent.com/70474860/218260493-273d1bf7-27af-4c08-8595-aaa8235b8cf1.png)
+![image](https://user-images.githubusercontent.com/70474860/218260730-9cdbc937-95a2-4747-8ff4-117998a28173.png)
 
 
 ### 생성 상태(create)
