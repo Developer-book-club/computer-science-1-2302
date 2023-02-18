@@ -266,11 +266,11 @@ member
 
 ## 4.6.1. 내부 조인
 
-`
+```sql
 SELECT * FROM TableA A
 INNER JOIN TableB B ON
 A.key = B.key
-`sql
+```
 
 ## 4.6.1.
 
