@@ -170,5 +170,5 @@ member
 ### 원자성(atomicity)
 
 ❓ 트랜잭션과 관련된 일이 모두 수행되었거나 되지 않았거나를 보장하는 특징
-- ** ""all or nothing"" **
+- ""**all or nothing**""
 - 
