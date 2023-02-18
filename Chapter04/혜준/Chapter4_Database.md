@@ -133,4 +133,10 @@ member
 ### 제2정규형
 
 - 릴레이션이 제 1정규형이며 부분 함수의 종속성을 제거한 형태
-- 부분 함수의 종속성 제거(**=완전 함수 종속**): 기본키가 아닌 모든 속성이 기본키에 완전 함수 종속적인 것
+- 부분 함수의 종속성 제거: 기본키가 아닌 모든 속성이 기본키에 **완전 함수 종속**적인 것
+
+> ✔ **완전 함수 종속**(Full Functional Dependency): A와 B가 릴레이션 R의 속성이고 A→B 종속성이 성립할 때, B가 A의 속성 전체에 함수 종속하고 부분 집합 속성에 함수 종속하지 않을 경우
+
+![image](https://user-images.githubusercontent.com/70474860/219867345-1a507eb1-ae64-49bf-a8b6-40c1be2d32f9.png)
+
+![image](https://user-images.githubusercontent.com/70474860/219867349-8e545e9f-103a-4692-b743-0db9317e4f57.png)
