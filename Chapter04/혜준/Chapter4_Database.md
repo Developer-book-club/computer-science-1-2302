@@ -65,7 +65,7 @@ member
 - 필드는 타입을 가짐
 - 숫자 타입: `TINYINT`, `SMALLINT`, `MEDIUMINT`, `INT`, `BIGINT`
 - 날짜 타입: `DATE`, `DATETIME`, `TIMESTAMP`
-- 문자 타입: `CHAR`, `VARCHAR`, `TEXT`, BLOB`, `ENUM`, `SET`
+- 문자 타입: `CHAR`, `VARCHAR`, `TEXT`, `BLOB`, `ENUM`, `SET`
 
 ## 4.1.6. 관계
 
