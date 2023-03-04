@@ -45,4 +45,30 @@ console.log(a === b)    //true
 - 앞의 코드는 Singleton.instance라는 하나의 인스턴스를 가지는 Singleton 클래스를 구현한 모습
 - a와 b는 하나의 인스턴스를 가짐
 
-### 데이터베이스 연결 
+### 데이터베이스 연결 모듈
+
+```js
+// DB 연결을 하는 것이기 때문에 비용이 더 높은 작업 
+const URL = 'mongodb://localhost:27017/kundolapp' 
+const createConnection = url => ({"url" : url})    
+class DB {
+    constructor(url) {
+        if (!DB.instance) { 
+            DB.instance = createConnection(url)
+        }
+        return DB.instance
+    }
+    connect() {
+        return this.instance
+    }
+}
+const a = new DB(URL)
+const b = new DB(URL) 
+console.log(a === b) // true
+```
+
+- DB.instance라는 하나의 인스턴스를 기반으로 a,b를 생성
+- 데이터베이스 연결에 관한 인스턴스 생성 비용을 아낄 수 있음
+
+### 싱글톤 패턴의 단점
+- **TDD(Test Driven Development)**는 단위 테스트를 주로 하는데, 단위 테스트는 테스트가 서로 독립적이어야 하며 어떤 순서로든 실행할 수 있어야 함 ➡ TDD를 하기 
