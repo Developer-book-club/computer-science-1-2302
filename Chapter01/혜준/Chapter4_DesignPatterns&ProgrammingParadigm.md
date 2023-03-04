@@ -22,3 +22,27 @@ const obj2 = {
 }
 console.log(obj === obj2)   //false
 ```
+
+- obj와 obj2는 서로 다른 메모리에 저장됨 => obj와 obj2는 다른 인스턴스를 가짐
+
+```js
+class Singleton {
+    constructor() {
+        if (!Singleton.instance) {
+            Singleton.instance = this
+        }
+        return Singleton.instance
+    }
+    getInstance() {
+        return this.instance
+    }
+}
+const a = new Singleton()
+const b = new Singleton()
+console.log(a === b)    //true
+```
+
+- 앞의 코드는 Singleton.instance라는 하나의 인스턴스를 가지는 Singleton 클래스를 구현한 모습
+- a와 b는 하나의 인스턴스를 가짐
+
+### 데이터베이스 연결 
