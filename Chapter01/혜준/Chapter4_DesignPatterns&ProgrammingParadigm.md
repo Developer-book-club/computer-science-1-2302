@@ -109,5 +109,7 @@ pool.query(query, function (error, results, fields) {
 ### 의존성 주입
 
 ❓ **의존성**: 종속성이라고도 하며 A가 B에 의존성이 있다는 것은 B의 변경 사항에 대해 A 또한 변해야 된다는 것을 의미함
-- **의존성 주입(DI, Dependency Injection)** 을 통해 
+- **의존성 주입**(DI, Dependency Injection)을 통해 모듈 간의 결합을 조금 더 느슨하게 만들어 해결
+- 메인 모듈(main mudule)이 '직접' 다른 하위 모듈에 대한 의존성을 주기보다는 중간에 의존성 주입자(dependency injector)가 이 부분을 가로채 메인 모듈이 '간접'적으로 의존성을 주입하는 방식 ➡ **디커플링이 된다**: 메인 모듈(상위 모듈)은 하위 모듈에 대한 의존성이 떨어짐
+- 
 
