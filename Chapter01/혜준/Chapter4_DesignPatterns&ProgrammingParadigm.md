@@ -218,5 +218,109 @@ main()
   - 상속: 일반 클래스, abstract 클래스를 기반으로 구현
   - 구현: 인터페이스를 기반으로 구현
   
+### 자바에서의 옵저버 패턴
+- Concrete Subject class에서 값을 변경하면 모든 Observer들에게 갱신하는 구조
+```java
+// Subject interface: Observer를 등록, 해제, 갱신하기 위한 API
+public interface Subject
+{
+    void registerObserver(Observer o);
+    void removeObserver(Observer o);
+    void notifyObservers();
+}
 
+// Observer interface: update()함수에 인자로 value값이 넘어옴
+public interface Observer
+{
+    void update(int value);
+}
 
+// ConcreteSubject는 Subject interface를 상속 받음. ArrayList를 사용하여 observer 정보를 갖고 있음
+public class ConcreteSubject : Subject
+{
+	IList _observers = new ArrayList();
+	int _value;
+	public ConcreteSubject()
+	{
+		_value = 0;
+	}
+	public void notifyObservers()
+	{
+		foreach (Observer o in _observers)
+			o.update(_value);
+	}
+ 
+	public void registerObserver(Observer o)
+	{
+		_observers.Add(o);
+	}
+ 
+	public void removeObserver(Observer o)
+	{
+		_observers.Remove(o);
+	}
+	public void setValue(int value)
+	{
+		_value = value;
+		notifyObservers();
+	}
+}
+
+// 각 Observer interface를 상속받는 A, B, C class. 똑같은 클래스를 중복 시킴. 각 클래스 생성자에서 ConcreteSubject를 인자로 받고, registerObserver를 호출하여 자신을 옵저버로써 등록
+public class A : Observer
+{
+	ConcreteSubject _subject;
+	public A(ConcreteSubject subject)
+	{
+		_subject = subject;
+		subject.registerObserver(this);
+	}
+	public void update(int value)
+	{
+		Console.WriteLine(String.Format("A Class update, value: {0}", value));
+	}
+}
+ 
+public class B : Observer
+{
+	ConcreteSubject _subject;
+	public B(ConcreteSubject subject)
+	{
+		_subject = subject;
+		subject.registerObserver(this);
+	}
+	public void update(int value)
+	{
+		Console.WriteLine(String.Format("B Class update, value: {0}", value));
+	}
+}
+ 
+public class C : Observer
+{
+	ConcreteSubject _subject;
+	public C(ConcreteSubject subject)
+	{
+		_subject = subject;
+		subject.registerObserver(this);
+	}
+	public void update(int value)
+	{
+		Console.WriteLine(String.Format("C Class update, value: {0}", value));
+	}
+}
+
+// 메인 프로그램. ConcreteSubject 및 A,B,C 인스턴스를 생성하는데 A, B, C 각 인스턴스가 옵저버로써 ConcreteSubject 인스턴스에 등록됨. 마지막 줄인 setValue(10)을 호출하면 모든 옵저버의 update가 호출됨
+class Program
+{
+	static void Main(string[] args)
+	{
+		ConcreteSubject concreteSubject = new ConcreteSubject();
+ 
+		A observerA = new A(concreteSubject);
+		B observerB = new B(concreteSubject);
+		C observerC = new C(concreteSubject);
+ 
+		concreteSubject.setValue(10);
+	}
+}
+```
