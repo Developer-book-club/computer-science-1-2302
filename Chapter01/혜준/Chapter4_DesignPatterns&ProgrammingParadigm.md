@@ -109,5 +109,5 @@ pool.query(query, function (error, results, fields) {
 ### 의존성 주입
 
 ❓ **의존성**: 종속성이라고도 하며 A가 B에 의존성이 있다는 것은 B의 변경 사항에 대해 A 또한 변해야 된다는 것을 의미함
-- **의존성 주입(DI, Dependency Injection)**을 통해 
+- **의존성 주입(DI, Dependency Injection)** 을 통해 
 
