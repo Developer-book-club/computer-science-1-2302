@@ -266,7 +266,8 @@ public class ConcreteSubject : Subject
 	}
 }
 
-// 각 Observer interface를 상속받는 A, B, C class. 똑같은 클래스를 중복 시킴. 각 클래스 생성자에서 ConcreteSubject를 인자로 받고, registerObserver를 호출하여 자신을 옵저버로써 등록
+// 각 Observer interface를 상속받는 A, B, C class. 똑같은 클래스를 중복 시킴. 
+// 각 클래스 생성자에서 ConcreteSubject를 인자로 받고, registerObserver를 호출하여 자신을 옵저버로써 등록
 public class A : Observer
 {
 	ConcreteSubject _subject;
@@ -309,7 +310,8 @@ public class C : Observer
 	}
 }
 
-// 메인 프로그램. ConcreteSubject 및 A,B,C 인스턴스를 생성하는데 A, B, C 각 인스턴스가 옵저버로써 ConcreteSubject 인스턴스에 등록됨. 마지막 줄인 setValue(10)을 호출하면 모든 옵저버의 update가 호출됨
+// 메인 프로그램. ConcreteSubject 및 A,B,C 인스턴스를 생성하는데 A, B, C 각 인스턴스가 옵저버로써 ConcreteSubject 인스턴스에 등록됨.
+// 마지막 줄인 setValue(10)을 호출하면 모든 옵저버의 update가 호출됨
 class Program
 {
 	static void Main(string[] args)
