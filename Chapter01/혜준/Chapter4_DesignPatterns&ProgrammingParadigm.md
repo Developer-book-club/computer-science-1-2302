@@ -74,7 +74,28 @@ console.log(a === b) // true
 
 ```js
 // 메인 모듈
+const mysql = require('mysql');
+const pool = mysql.createPool({
+  connectionLimit: 10,
+  host: 'example.org',
+  user: 'kundol',
+  password: 'secret',
+  database: '승철이디비'
+ });
+ pool.connect();
+ 
+ // 모듈 A
+pool.query(query, function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results[0].solution);
+});
 
+// 모듈 B
+pool.query(query, function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results[0].solution);
+});
+```
 
 ### 싱글톤 패턴의 단점
 - **TDD(Test Driven Development)** 는 단위 테스트를 주로 하는데, 단위 테스트는 테스트가 서로 독립적이어야 하며 어떤 순서로든 실행할 수 있어야 함 ➡ TDD를 하기 어려움
