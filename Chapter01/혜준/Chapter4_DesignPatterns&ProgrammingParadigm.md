@@ -139,3 +139,62 @@ pool.query(query, function (error, results, fields) {
 ### 자바스크립트의 팩토리 패턴
 
 - 자바스크립트에서 팩토리 패턴은 `new Object()`로 구현 가능
+
+```js
+const num = new Object(42)
+const str = new Object('abc')
+num.constructor.name; // Number
+str.constructor.name; // String
+```
+
+```js
+class CoffeeFactory {
+    static createCoffee(type) {
+        const factory = factoryList[type]
+        return factory.createCoffee()
+    }
+}   
+class Latte {
+    constructor() {
+        this.name = "latte"
+    }
+}
+class Espresso {
+    constructor() {
+        this.name = "Espresso"
+    }
+} 
+
+class LatteFactory extends CoffeeFactory{
+    static createCoffee() {
+        return new Latte()
+    }
+}
+class EspressoFactory extends CoffeeFactory{
+    static createCoffee() {
+        return new Espresso()
+    }
+}
+const factoryList = { LatteFactory, EspressoFactory } 
+ 
+ 
+const main = () => {
+    // 라떼 커피를 주문한다.  
+    const coffee = CoffeeFactory.createCoffee("LatteFactory")  
+    // 커피 이름을 부른다.  
+    console.log(coffee.name) // latte
+}
+main()
+```
+- CoffeeFactory라는 상위 클래스가 중요한 뼈대를 결정하고 하위 클래스인 LatteFactory가 구체적인 내용을 결정
+- 의존성 주입이라고도 볼 수 있음. CoffeeFactory에서 LatteFactory의 인스턴스를 생성하는 것이 아닌 LatteFactory에서 생성한 인스턴스를 CoffeeFactory에 주입하고 있기 때문
+- CoffeeFactory를 보면 static으로 createCoffee() 정적 메서드를 정의한 것을 알 수 있는데, 정적 메서드를 쓰면 클래스의 인스턴스 없이 호출이 가능하여 메모리를 절약할 수 있고 개별 인스턴스에 묶이지 않으며 클래스 내의 함수를 정의할 수 있는 장점
+
+## 1.1.3. 전략 패턴(strategy pattern)
+❓ **전략 패턴**: 정책 패턴(policy pattern)이라고도 하며, 객체의 행위를 바꾸고 싶은 경우 '직접' 수정하지 않고 전략이라고 부르는 '캡슐화한 알고리즘'을 컨텍스트 안에서 바꿔주면서 상호 교체가 가능하게 만드는 패턴
+
+
+
+
+
+
