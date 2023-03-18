@@ -54,5 +54,4 @@
 스푸핑
 - 스위칭 기능을 마비 시키거나 속여서 특정 노드에 해당 패킷이 오도록 처리 
 - 스위칭: LAN상에서 송신부의 패킷을 송신과 관련없는 다른 호스트에 가지 않도록 하는 기능
-
 /var/folders/8_/z9yztddj6wbczy__9s_gjwr00000gn/T/TemporaryItems/NSIRD_screencaptureui_ckRDD7/스크린샷 2023-03-18 오후 9.21.53.png
